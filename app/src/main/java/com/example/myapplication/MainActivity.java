@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -17,6 +18,16 @@ import java.util.Hashtable;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.core.Path;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +48,35 @@ public class MainActivity extends AppCompatActivity {
         Button like = (Button) findViewById(R.id.Like);
         Button dislike = (Button) findViewById(R.id.Dislike);
 
+        // gets the data but is only usable inside onDataChange
+        // glide is not usable inside onDataChange
+        /*
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("images").child("0");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+                Backend doge = snapshot.getValue(Backend.class);
+                System.out.printf("IMAGE PATH SNAPSHOT : %s\n", doge.image_path);
+
+                //StorageReference storageReference = FirebaseStorage.getInstance().getReference(doge.image_path);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.out.println("FAILURE");
+            }
+        });
+        */
+
+        //// THIS WORKS but is hardcoded
+        // this gets images reference
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference("images/n02085620_10131.jpg");
+        Log.i("Storage REF", storageReference.getBucket());
+        // This passes the image to the image view dog
+        Glide.with(this /* context */).load(storageReference).into(dog);
+
             like.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -53,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
-
 
             dislike.setOnClickListener(new View.OnClickListener() {
               @Override
