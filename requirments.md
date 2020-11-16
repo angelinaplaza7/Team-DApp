@@ -1,7 +1,7 @@
 # Requirements Specification for Team-DApp
 
 # 1. Introduction
-Team Drone will create an application that will show the user pictures of different types of dogs which the user can like or dislike, after a certain amount of pictures have been classified the application will identify user preferences and start recomending pictures that are within the margin of the users preferences.
+Team DApp will create an application that will show the user pictures of different types of dogs which the user can like or dislike, after a certain amount of pictures have been classified the application will identify user preferences and start recomending pictures that are within the margin of the users preferences.
 
 # 1.1 Purpose of Product
 Team-DApp will create an application that will identify the users’ preferences of the types of dogs. By keeping track of the race of dogs that the user likes also tracking the characteristics of those types of dogs. This will also help the user determine which dogs are from his preferences.
