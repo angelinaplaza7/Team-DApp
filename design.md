@@ -5,8 +5,8 @@
 
 The way the design of the architecture was thought out was mainly being in spaced based architecture. The beginning of the design is with having the application on the mobile device from there it will establish a connection with Firebase which is the designated database choosen for this project, the connection will be either by making a new account or logging in to a previously made account. Firebase will authenticate the user and then it will send bytes to the application in the mobile device that will display images, then the user will either like or dislike the image and this decision will be sent back to firebase for storing. Once enough decisions have been stored then firebase will send information to the backend of the application to compute an outline of the possibly preferences of the user which then it will change accordingly the images that it sends the mobile device to those it is believed to be of the liking of the user.
 
-#Classes and Objects
-The design page must also include a description of the class-level design of your system: what are the major classes and what are their objects' responsibilities, are they singleton classes?, etc.
+# Classes and Objects
+
 ## 1 Main Activity
 In this class we have the main layout of the application with the image and two buttons that will be sent to firebase for storing. 
 
