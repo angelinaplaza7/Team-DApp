@@ -17,10 +17,10 @@ This class we have two EditText for the user to input his email and the password
 This class has the layout for the user to log in with two EditText variables which are used to check on firebase whether the user already has an account or if the user must sign up to use the application.
 
 
-##  5 DisplayActivity
+##  4 DisplayActivity
 In this class the objective is for the user to be able to add their own pictures to the already extensive gallery of dogs. This is multiple buttons so that the user can open their phone gallery and select the image plus a token that will show the user if his picture was successfully uploaded to the database.
 
-## 4 ImageActivity 
-In this class the user is shown the ten most recent uploads he made to the database with the use of some databse references and an upload list to hold the pictures once retrieved from the database.
+## 5 ImageActivity 
+In this class the user is shown all the uploads to the database with the use of some databse references and an upload list to hold the pictures once retrieved from the database.
 
 #Other
