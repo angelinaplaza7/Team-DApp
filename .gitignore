@@ -22,7 +22,6 @@
 *.zip
 *.tar.gz
 *.rar
-*.gradle
 *.idea
 /app
 
