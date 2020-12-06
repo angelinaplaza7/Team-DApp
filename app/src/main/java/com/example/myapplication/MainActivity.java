@@ -38,19 +38,6 @@ public class MainActivity extends AppCompatActivity {
         Button dislike = (Button) findViewById(R.id.Dislike);
         Button stop = (Button) findViewById(R.id.Stop);
 
-        //stop showing following pictures
-        stop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = null;
-                intent = new Intent(MainActivity.this,Newaccount.class);
-                startActivity(intent);
-                Toast.makeText(getApplicationContext(),"stop successfully!",Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
 
         imagizer(dog, "3");
 
@@ -91,7 +78,22 @@ public class MainActivity extends AppCompatActivity {
                   }
                 }
             });
+
+        //stop showing following pictures
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = null;
+                intent = new Intent(MainActivity.this,Newaccount.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"stop successfully!",Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
+
+
 
     public void imagizer(final ImageView iview, String img) {
 
