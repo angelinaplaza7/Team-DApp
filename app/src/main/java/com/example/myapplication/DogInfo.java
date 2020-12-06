@@ -12,7 +12,7 @@ import java.net.HttpURLConnection;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 
-public class Backend
+public class DogInfo
 {
     public String breed;
     public String coat;
@@ -23,23 +23,23 @@ public class Backend
     public String image_path;
     public String life_span;
     public String size;
-    public String weightKg;
-    public String weightLb;
+    public String weightkg;
+    public String weightlb;
 
-    public Backend() {
+    public DogInfo() {
 
     }
-    public Backend(String breed,
-                String coat,
-                String color,
-                String common_nicknames,
-                String height_cm,
-                String height_in,
-                String image_path,
-                String life_span,
-                String size,
-                String weightKg,
-                String weightLb)
+    public DogInfo(String breed,
+                   String coat,
+                   String color,
+                   String common_nicknames,
+                   String height_cm,
+                   String height_in,
+                   String image_path,
+                   String life_span,
+                   String size,
+                   String weightKg,
+                   String weightLb)
     {
         this.breed = breed;
         this.color = color;
@@ -49,8 +49,8 @@ public class Backend
         this.image_path = image_path;
         this.life_span = life_span;
         this.size = size;
-        this.weightKg = weightKg;
-        this.weightLb = weightLb;
+        this.weightkg = weightKg;
+        this.weightlb = weightLb;
     }
     /*
     public String getImagePath(int imgNum)
