@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,6 +36,21 @@ public class MainActivity extends AppCompatActivity {
         final ImageView dog = (ImageView) findViewById(R.id.Image);
         Button like = (Button) findViewById(R.id.Like);
         Button dislike = (Button) findViewById(R.id.Dislike);
+        Button stop = (Button) findViewById(R.id.Stop);
+
+        //stop showing following pictures
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = null;
+                intent = new Intent(MainActivity.this,Newaccount.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"stop successfully!",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 
         imagizer(dog, "3");
 
