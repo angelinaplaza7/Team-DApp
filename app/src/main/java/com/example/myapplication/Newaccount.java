@@ -38,7 +38,7 @@ public class Newaccount extends AppCompatActivity {
                 String email = emailId.getText().toString();
                 String pwd = password.getText().toString();
                 if(email.isEmpty()) {
-                    emailId.setError("Please enter emaild id");
+                    emailId.setError("Please enter your email id");
                     emailId.requestFocus();
                 }
                 else if(pwd.isEmpty()) {
@@ -53,7 +53,7 @@ public class Newaccount extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()) {
-                                Toast.makeText(Newaccount.this,"SignUp Unsuccessful, Please Try Again",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Newaccount.this,"SignUp Unsuccessful, Please check the format of your email and password!",Toast.LENGTH_LONG).show();
 
                             }
                             else {
