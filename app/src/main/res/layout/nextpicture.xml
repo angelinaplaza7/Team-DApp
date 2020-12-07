@@ -31,6 +31,7 @@
         android:background="@drawable/thumb_up"
         android:onClick="@android:string/yes" />
 
+
     <ImageView
         android:id="@+id/Image"
         android:layout_width="356dp"
