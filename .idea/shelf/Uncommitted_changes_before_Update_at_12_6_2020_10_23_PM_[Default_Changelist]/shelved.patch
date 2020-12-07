@@ -1,0 +1,74 @@
+Index: app/src/main/res/drawable/custom_button.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<shape xmlns:android=\"http://schemas.android.com/apk/res/android\" android:shape=\"rectangle\" android:orientation=\"horizontal\">\r\n    <gradient android:startColor=\"#02B39F\" android:endColor=\"#FFFEFE\" android:type=\"linear\"/>\r\n\r\n</shape>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/custom_button.xml	(revision 4ff2a76520fb6ddd735d92626b955f3c8927a266)
++++ app/src/main/res/drawable/custom_button.xml	(date 1607318018356)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" android:orientation="horizontal">
+-    <gradient android:startColor="#02B39F" android:endColor="#FFFEFE" android:type="linear"/>
++    <gradient android:startColor="#07A1FF" android:endColor="#D2AA00FF" android:type="linear"/>
+ 
+ </shape>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\"\r\n    android:background=\"@drawable/custom_button\">\r\n\r\n    <Button\r\n        android:id=\"@+id/Dislike\"\r\n        style=\"@style/Widget.AppCompat.Button.Colored\"\r\n        android:layout_width=\"120dp\"\r\n        android:layout_height=\"125dp\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginBottom=\"6dp\"\r\n        android:background=\"@drawable/thumb_down\"\r\n        android:onClick=\"@android:string/no\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/Like\"\r\n        style=\"@style/Widget.AppCompat.Button.Colored\"\r\n        android:layout_width=\"120dp\"\r\n        android:layout_height=\"125dp\"\r\n        android:layout_alignParentEnd=\"true\"\r\n        android:layout_alignParentRight=\"true\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginEnd=\"-1dp\"\r\n        android:layout_marginRight=\"-1dp\"\r\n        android:layout_marginBottom=\"6dp\"\r\n        android:background=\"@drawable/thumb_up\"\r\n        android:onClick=\"@android:string/yes\" />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/Image\"\r\n        android:layout_width=\"356dp\"\r\n        android:layout_height=\"439dp\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentLeft=\"true\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_alignParentEnd=\"true\"\r\n        android:layout_alignParentRight=\"true\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginStart=\"27dp\"\r\n        android:layout_marginLeft=\"27dp\"\r\n        android:layout_marginTop=\"75dp\"\r\n        android:layout_marginEnd=\"27dp\"\r\n        android:layout_marginRight=\"27dp\"\r\n        android:layout_marginBottom=\"217dp\"\r\n        android:background=\"@drawable/ic_launcher_foreground\"\r\n        android:contentDescription=\"TODO\"\r\n        android:scaleType=\"fitCenter\"\r\n        app:srcCompat=\"@drawable/puppies\"\r\n        tools:srcCompat=\"@drawable/puppies\" />\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_main.xml	(revision 4ff2a76520fb6ddd735d92626b955f3c8927a266)
++++ app/src/main/res/layout/activity_main.xml	(date 1607318382655)
+@@ -33,20 +33,20 @@
+ 
+     <ImageView
+         android:id="@+id/Image"
+-        android:layout_width="356dp"
+-        android:layout_height="439dp"
++        android:layout_width="385dp"
++        android:layout_height="wrap_content"
+         android:layout_alignParentStart="true"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_alignParentEnd="true"
+         android:layout_alignParentRight="true"
+         android:layout_alignParentBottom="true"
+-        android:layout_marginStart="27dp"
+-        android:layout_marginLeft="27dp"
++        android:layout_marginStart="11dp"
++        android:layout_marginLeft="11dp"
+         android:layout_marginTop="75dp"
+-        android:layout_marginEnd="27dp"
+-        android:layout_marginRight="27dp"
+-        android:layout_marginBottom="217dp"
++        android:layout_marginEnd="15dp"
++        android:layout_marginRight="15dp"
++        android:layout_marginBottom="174dp"
+         android:background="@drawable/ic_launcher_foreground"
+         android:contentDescription="TODO"
+         android:scaleType="fitCenter"
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"colorPrimary\">#03DAC5</color>\r\n    <color name=\"colorPrimaryDark\">#FFFFFF</color>\r\n    <color name=\"colorAccent\">#EFCCAC</color>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/colors.xml	(revision 4ff2a76520fb6ddd735d92626b955f3c8927a266)
++++ app/src/main/res/values/colors.xml	(date 1607317727591)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+-    <color name="colorPrimary">#03DAC5</color>
+-    <color name="colorPrimaryDark">#FFFFFF</color>
+-    <color name="colorAccent">#EFCCAC</color>
++    <color name="colorPrimary">#0091EA</color>
++    <color name="colorPrimaryDark">#EFCCAC</color>
++    <color name="colorAccent">#FFFFFF</color>
+ </resources>
+\ No newline at end of file
