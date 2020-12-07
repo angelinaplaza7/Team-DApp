@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         Button dislike = (Button) findViewById(R.id.Dislike);
         Button stop = (Button) findViewById(R.id.Stop);
 
-
         getImage(dog, "3");
 
             like.setOnClickListener(new View.OnClickListener() {
@@ -90,18 +89,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-<<<<<<< HEAD
+
     /**
      * Gets an image from firebase and inserts it into the passed ImageView
      * @param iview - ImageView to pass image to.
      * @param img - image to get from firebase
      */
     public void getImage(final ImageView iview, String img) {
-=======
 
-
-    public void imagizer(final ImageView iview, String img) {
->>>>>>> 78d6900c3097112ec229e4e0a506acab9fc1fd25
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("images").child(img);
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
