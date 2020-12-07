@@ -12,8 +12,12 @@ import java.net.HttpURLConnection;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 
-public class DogInfo
-{
+/**
+ * DogInfo class allows us to retrieve info from firebase.
+ * The information from the database can the be accessed as an attribute of DogInfo.
+ */
+public class DogInfo {
+
     public String breed;
     public String coat;
     public String color;
@@ -23,12 +27,13 @@ public class DogInfo
     public String image_path;
     public String life_span;
     public String size;
-    public String weightkg;
-    public String weightlb;
+    public String weight_kg;
+    public String weight_lb;
 
     public DogInfo() {
-
+     // empty constructor
     }
+
     public DogInfo(String breed,
                    String coat,
                    String color,
@@ -49,31 +54,8 @@ public class DogInfo
         this.image_path = image_path;
         this.life_span = life_span;
         this.size = size;
-        this.weightkg = weightKg;
-        this.weightlb = weightLb;
+        this.weight_kg = weightKg;
+        this.weight_lb = weightLb;
     }
-    /*
-    public String getImagePath(int imgNum)
-    {
-        char num = (char) imgNum;
 
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference dbRef = database.getReference();
-
-        dbRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                DogInfo info = snapshot.getValue(DogInfo.class);
-                System.out.println(info);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                System.out.println("Database read failed: " + error.getCode());
-
-            }
-        });
-        return "";
-    }
-     */
 }

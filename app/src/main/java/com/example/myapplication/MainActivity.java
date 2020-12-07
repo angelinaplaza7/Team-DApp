@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,13 +22,11 @@ import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Random rand = new Random();
     public int count = 0;
-    public int imageCount = 152;
+    public int imageCount = 1170;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -35,18 +34,20 @@ public class MainActivity extends AppCompatActivity {
         final ImageView dog = (ImageView) findViewById(R.id.Image);
         Button like = (Button) findViewById(R.id.Like);
         Button dislike = (Button) findViewById(R.id.Dislike);
+        Button stop = (Button) findViewById(R.id.Stop);
 
-        imagizer(dog, "3");
+
+        getImage(dog, "3");
 
             like.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.i("MYapp", "This is log message");
+
                     if(count < imageCount)
                     {
                         String getImg = randomImage();
                         Log.i("IMGNUM", getImg);
-                        imagizer(dog, getImg);
+                        getImage(dog, getImg);
                         count++;
                     }
                     else
@@ -61,12 +62,11 @@ public class MainActivity extends AppCompatActivity {
               @Override
                 public void onClick(View v) {
 
-                  Log.i("MYapp", "This is log message");
-                    //openNoDogs();
                   if(count < imageCount)
                   {
                       String getImg = randomImage();
-                      imagizer(dog, getImg);
+                      Log.i("IMGNUM", getImg);
+                      getImage(dog, getImg);
                       count++;
                   }
                   else
@@ -75,20 +75,40 @@ public class MainActivity extends AppCompatActivity {
                   }
                 }
             });
+
+        //stop showing following pictures
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = null;
+                intent = new Intent(MainActivity.this,Newaccount.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"stop successfully!",Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
+<<<<<<< HEAD
+    /**
+     * Gets an image from firebase and inserts it into the passed ImageView
+     * @param iview - ImageView to pass image to.
+     * @param img - image to get from firebase
+     */
+    public void getImage(final ImageView iview, String img) {
+=======
+
+
     public void imagizer(final ImageView iview, String img) {
+>>>>>>> 78d6900c3097112ec229e4e0a506acab9fc1fd25
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("images").child(img);
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 DogInfo doge = snapshot.getValue(DogInfo.class);
                 setImage(iview, doge.image_path);
-                //System.out.printf("IMAGE PATH SNAPSHOT : %s\n", doge.image_path);
-
-                //StorageReference storageReference = FirebaseStorage.getInstance().getReference(doge.image_path);
             }
 
             @Override
@@ -98,8 +118,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * Helper method for getImage that uses glide to set the image in the ImageView.
+     * @param iview - image view to set
+     * @param sref - image to get from firebase
+     */
     public void setImage(final ImageView iview, String sref) {
-        //String sref = "images/n02085620_3742.jpg";
         StorageReference storageReference = FirebaseStorage.getInstance().getReference(sref);
         Glide.with(this).load(storageReference).into(iview);
     }
@@ -109,9 +134,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public String randomImage()
-    {
-        int imgIndex = (int) (Math.random() * (151));
+    /**
+     * Images in firebase are indexed by a number that is a string ("0", "1", "2")
+     * This function gets a random number and converts it to a string so a random entry
+     * can be fetched from firebase
+     * @return - random number as a string
+     */
+    public String randomImage() {
+        int imgIndex = (int) (Math.random() * (imageCount - 1));
         return Integer.toString(imgIndex);
     }
 
