@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -25,6 +26,23 @@ public class MainActivity extends AppCompatActivity {
     public int count = 0;
     public int imageCount = 1170;
 
+    public void openNoDogs() {
+        Intent intent = new Intent(this, nodogs.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Images in firebase are indexed by a number that is a string ("0", "1", "2")
+     * This function gets a random number and converts it to a string so a random entry
+     * can be fetched from firebase
+     *
+     * @return - random number as a string
+     */
+    public String randomImage() {
+        int imgIndex = (int) (Math.random() * (imageCount - 1));
+        return Integer.toString(imgIndex);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -38,42 +56,36 @@ public class MainActivity extends AppCompatActivity {
 
         getImage(dog, "3");
 
-            like.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                    if(count < imageCount)
-                    {
-                        String getImg = randomImage();
-                        Log.i("IMGNUM", getImg);
-                        getImage(dog, getImg);
-                        count++;
-                    }
-                    else
-                    {
-                        openNoDogs();
-                        count++;
-                    }
+                if (count < imageCount) {
+                    String getImg = randomImage();
+                    Log.i("IMGNUM", getImg);
+                    getImage(dog, getImg);
+                    count++;
+                } else {
+                    openNoDogs();
+                    count++;
                 }
-            });
+            }
+        });
 
-            dislike.setOnClickListener(new View.OnClickListener() {
-              @Override
-                public void onClick(View v) {
+        dislike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                  if(count < imageCount)
-                  {
-                      String getImg = randomImage();
-                      Log.i("IMGNUM", getImg);
-                      getImage(dog, getImg);
-                      count++;
-                  }
-                  else
-                  {
-                      openNoDogs();
-                  }
+                if (count < imageCount) {
+                    String getImg = randomImage();
+                    Log.i("IMGNUM", getImg);
+                    getImage(dog, getImg);
+                    count++;
+                } else {
+                    openNoDogs();
                 }
-            });
+            }
+        });
 
         //stop showing following pictures
         stop.setOnClickListener(new View.OnClickListener() {
@@ -81,23 +93,38 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = null;
-                intent = new Intent(MainActivity.this,Newaccount.class);
+                intent = new Intent(MainActivity.this, Newaccount.class);
                 startActivity(intent);
-                Toast.makeText(getApplicationContext(),"stop successfully!", Toast.LENGTH_SHORT).show();
-                Toast.makeText(getApplicationContext(),"stop successfully!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "stop successfully!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "stop successfully!", Toast.LENGTH_SHORT).show();
 
             }
         });
     }
 
 
+    /**
+     * Helper method for getImage that uses glide to set the image in the ImageView.
+     *
+     * @param iview - image view to set
+     * @param sref  - image to get from firebase
+     */
+    public void setImage(final ImageView iview, String sref) {
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference(sref);
+        Glide.with(this).load(storageReference).into(iview);
+    }
+
 
     public void imagizer(final ImageView iview, String img) {
+    }
+
     /**
      * Gets an image from firebase and inserts it into the passed ImageView
+     *
      * @param iview - ImageView to pass image to.
-     * @param img - image to get from firebase
+     * @param img   - image to get from firebase
      */
+
     public void getImage(final ImageView iview, String img) {
 
 
@@ -116,31 +143,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    /**
-     * Helper method for getImage that uses glide to set the image in the ImageView.
-     * @param iview - image view to set
-     * @param sref - image to get from firebase
-     */
-    public void setImage(final ImageView iview, String sref) {
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference(sref);
-        Glide.with(this).load(storageReference).into(iview);
-    }
-
-    public void openNoDogs() {
-        Intent intent = new Intent(this, nodogs.class);
-        startActivity(intent);
-    }
-
-    /**
-     * Images in firebase are indexed by a number that is a string ("0", "1", "2")
-     * This function gets a random number and converts it to a string so a random entry
-     * can be fetched from firebase
-     * @return - random number as a string
-     */
-    public String randomImage() {
-        int imgIndex = (int) (Math.random() * (imageCount - 1));
-        return Integer.toString(imgIndex);
-    }
-
 }
