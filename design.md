@@ -1,6 +1,6 @@
 # Design Document
 
-#Architecture Diagram
+**Architecture Diagram**
 ![picture](./img/archdiag.PNG)
 
 The way the design of the architecture was thought out was mainly being in spaced based architecture. The beginning of the design is with having the application on the mobile device from there it will establish a connection with Firebase which is the designated database choosen for this project, the connection will be either by making a new account or logging in to a previously made account. Firebase will authenticate the user and then it will send bytes to the application in the mobile device that will display images, then the user will either like or dislike the image and this decision will be sent back to firebase for storing. Once enough decisions have been stored then firebase will send information to the backend of the application to compute an outline of the possibly preferences of the user which then it will change accordingly the images that it sends the mobile device to those it is believed to be of the liking of the user.
@@ -22,5 +22,3 @@ In this class the objective is for the user to be able to add their own pictures
 
 ## 5 ImageActivity 
 In this class the user is shown all the uploads to the database with the use of some databse references and an upload list to hold the pictures once retrieved from the database.
-
-#Other
