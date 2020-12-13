@@ -12,6 +12,8 @@ Open file.
 You then have to pick which android device you will be using. We are using a Pixel 2 API 30.
 Then click run and you should see the app come up on your phone.
 
+## If you want to use for future use.
+We have multiple pages on android studios. Each Page has a specific reason for it. Displayactivty and nextpicture is what helps switch the images from the app itself. Communicates through firebase which you will have to create on your own and upload pictures yourself. You will have to switch the firebase location as well to your personal location. Loginscreen and newaccount is for an actual user. You can create or login with an account. To use this you will then again create your own firebase so it can upload the the accounts. Imagesactivity is on the app just to show all the pictures from firebase in a scrolling down motion which we didn't implement but it has the capability to do so. You also need firebase for this program. Last of all the libraries are already installed in the gridle part of the app. If you add implementations to the app make sure that your libraries are updated.
 
 ### Related Links
 1 Burndown Chart Link
