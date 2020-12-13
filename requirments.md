@@ -51,9 +51,9 @@ A assumpion is that the user will have a fast enough processor and enough memory
 - The dislike button works.
 - The image is displayed. 
 - The images changes once a button is pressed.
-- The decision is stored.
-- The preference is calculated.
-- The application recommends dogs.
+- The decision is stored.(Future Work)
+- The preference is calculated.(Future Work)
+- The application recommends dogs. (Future Work)
  
 # 4. System and Non-functional Requirements
 # 4.1 External Interface Requirements (User,Hardware,Software,Communications)
