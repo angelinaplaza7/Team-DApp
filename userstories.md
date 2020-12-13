@@ -14,7 +14,7 @@ Effort Estimation: 3 person-hours.
 
 Acceptance Test: Depeloving an APK to install in a smartphone to identify if there are any problems with the placing of all the objects created for the app.
 
-# 1.2 Data collection
+# 1.2 Data collection (Future Work)
 As a user, I want to be able to see the history of the selections I have made.
 
 Elaboration: When users make a selection for each image, whether they like or dislike it, the software should store those selections
@@ -25,7 +25,7 @@ Effort Estimation: 3 person-hours.
 
 Acceptance Test: Perform a test where the user gets to make a selection on 100 images and see if the application managed to store all 100 of the user's choicess.
 
-# 1.3 Data Analyzer
+# 1.3 Data Analyzer (Future Work)
 As a user, I would like to see which groups of dogs I prefer.
 (The AKC has 7 groups for dog breeds)
 
@@ -49,7 +49,7 @@ Effort Estimation: 5 person-hours.
 
 Acceptance Test: Once identified the preferences of a certain user then the team must make sure that the app is actually looking for images that are on the preferences of the user.
 
-# 1.5 Adoption Suggestions.
+# 1.5 Adoption Suggestions.(Future Work)
 As a user I would like to see if there are adoptable dogs in my area that match my preferences.
 
 Elaboration: Once the preferences are identified then the team aims to search certain webpages of animal shelters to look for animals that match those preferences.
